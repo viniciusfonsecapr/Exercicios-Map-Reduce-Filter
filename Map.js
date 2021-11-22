@@ -9,25 +9,58 @@
             - Array compeleto
 */
 
-const numbers = [1, 2, 3, 4]
-const students = [
-    { name: "Rodolfo", age: 25 },
-    { name: "Maria", age: 43 },
-    { name: "Joao", age: 21 },
-    { name: "Bruno", age: 43 },
-    { name: "Carla", age: 13 },
-    { name: "Ana", age: 20 },
-    { name: "Julio", age: 26 },
+const list = [
+
+    { name: "Rodolfo", vip: true },
+    { name: "Maria", vip: false },
+    { name: "João", vip: true },
+    { name: "Bruno", vip: true },
+    { name: "Carla", vip: false },
+    { name: "Ana", vip: true },
+    { name: "Julio", vip: false },
+
 ];
 
-// const newArray = numbers.map((student)) => {
-//     return number * 2 
-// }
+const newList = list.map( client => {
 
-// const newStudents = students.map ( (student) => { 
-//     const newStudent = {
-//         name: student.name + 'da Silva'
-//         age: student.age -5
-//     }
-//     return newStudent
-// }
+    const newList = {
+        name: client.name,
+        vip: client.vip,
+        sector: client.vip ? "Black" : "Green"
+    }
+    return newList
+
+})
+
+console.log(newList)
+
+
+const students = [
+
+    { name: "Rodolfo", testGrade: 7 },
+    { name: "Maria", testGrade: 5 },
+    { name: "João", testGrade:  8},
+    { name: "Bruno", testGrade:  9},
+    { name: "Carla", testGrade: 3 },
+    { name: "Ana", testGrade:  2},
+    { name: "Julio", testGrade: 10 },
+
+];
+
+const aprrovedStudents = students.map( student => {
+    let approvedOrNot 
+    if(student.testGrade >= 7){
+        approvedOrNot = "Approved"
+    } else {
+        approvedOrNot = "Disapproved"
+    }
+    const students = {
+        name: student.name,
+        finalResult: approvedOrNot
+    }
+
+    return students
+
+})
+
+console.log(aprrovedStudents)
